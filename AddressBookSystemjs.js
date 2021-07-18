@@ -218,6 +218,21 @@ class AddressBook
           "nandha@gmail.com"
         )
       );
+       //push() method adds new items to the end of an array.
+       ContactsArray.push
+       (
+         new AddressBook
+         (
+           "Nandha",
+           "Kumar",
+           "fourstreet",
+           "Delhi",
+           "NewDelhi",
+           "891 258",
+           "87 9090909090",
+           "nandha@gmail.com"
+         )
+       );
      //The forEach() method calls a function once for each element in an array, in order.
      //function will be executed for every single element of the array. It must take at
      // least one parameter which represents the elements of an array
@@ -241,7 +256,21 @@ class AddressBook
  ContactsArray.splice(check, 1);
  console.log("----------------------Contacts after Being Deleted from the array---------------------------------");
  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
- } catch (e) 
- {
-   console.log(e);
- }
+ // check for duplicate Person details
+let CountDuplicate = 0;
+function CheckDuplicatesCount(contact_book) 
+{
+  if (contact_book.firstName == "Nandha") CountDuplicate++;
+  return CountDuplicate;
+}
+
+//using foreach checking the count for each contact
+ContactsArray.forEach((contact_book) => CheckDuplicatesCount(contact_book));
+if (CountDuplicate == 1)
+  console.log( "--It is Not a Duplicate Entry--" );
+else
+  console.log( "--It is Duplicate Entry--" );
+} catch (e) 
+{
+  console.log(e);
+}

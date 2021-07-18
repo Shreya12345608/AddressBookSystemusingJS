@@ -221,10 +221,21 @@ class AddressBook
      //The forEach() method calls a function once for each element in an array, in order.
      //function will be executed for every single element of the array. It must take at
      // least one parameter which represents the elements of an array
-      ContactsArray.forEach((contact_book) =>
-        console.log(contact_book.toString())
-      );
-    } catch (e) 
-    {
-      console.log(e);
-    }
+       //printing array before updating
+  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
+
+  //finding index using name
+  // Array.findIndex() method returns the index of the first element in an array that passes a 
+//test (provided by a function)
+  let check = ContactsArray.findIndex(
+    (contact_book) => contact_book.firstName == "Shreya"
+  );
+  //updating the contact detail
+  ContactsArray[check].zip = "121 333";
+
+  //displaying contacts after being updated
+  console.log("----------------------After Changing Zip Updated Contacts are------------------------------------");
+  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
+} catch (e) {
+  console.log(e);
+}

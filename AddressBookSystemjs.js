@@ -288,8 +288,19 @@ else
   let statecontact = ContactsArray.filter((contact_book) => contact_book.state.includes("Mharashtra")
   );
   console.log(statecontact.toString());
-} catch (e) 
+
+  
+  // UC9 - Ability to View Person by City or State
+function StateMap(Details)
 {
-  console.log(e);
+  return Details.state + "    " + Details.firstName + "      " + Details.lastName;
+}
+//Map object holds key-value pairs and remembers the original insertion order of the keys
+let addressStateMap = ContactsArray.map(StateMap);
+console.log(addressStateMap);
 }
 
+catch (e) 
+{
+console.log(e);
+}
